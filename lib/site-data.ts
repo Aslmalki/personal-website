@@ -62,10 +62,10 @@ export type BlogPost = {
 
 export const site = {
   name: "Abdullah Almalki",
-  displayName: "Dr. Abdullah Almalki",
-  fullName: "Abdullah S. Almalki",
+  displayName: "Abdullah Almalki",
+  fullName: "Abdullah Almalki",
   citationName: "Almalki, A.",
-  title: "Assistant Professor of Computational Science and Informatics",
+  title: "Assistant Professor of Computational Sciences and Informatics",
   emphasis: "Space Informatics",
   department: "Department of Information Systems",
   university: "King Abdulaziz University",
@@ -136,7 +136,7 @@ export const research = {
 
 export const publications: Publication[] = [
   {
-    authors: ["Almalki, A.", "et al."],
+    authors: ["Berea, A", "Grieg, C", "Sontam, V", "Vera, R","Stine, A", "Kobylarz, B", "Kennedy, W", "Prather, C", "Almaki, A"],
     title: "GIS of the Moon: Current Challenges and Immediate Needs",
     venue: "57th Lunar and Planetary Science Conference",
     year: 2026,
@@ -199,7 +199,7 @@ export const publications: Publication[] = [
 
 export const projects: Project[] = [
   {
-    title: "Stellar Drop",
+    title: "Sonification: Stellar Drop",
     kind: "Sonification · Educational game",
     description:
       "A sky of 139 real RR Lyrae stars. Tap a star to learn what its light reveals about its distance, temperature, and true brightness, then hear its pulse as a note. You can also hear your name in star language.",
@@ -209,32 +209,46 @@ export const projects: Project[] = [
 ]
 
 export const courses: Course[] = [
+    {
+    code: "CPIS 342",
+    name: "Data Mining",
+    term: "Current",
+    description: "Core techniques for discovering patterns in data, from preparation and modeling to evaluation.",
+    level: "King Abdulaziz University",
+  },
   {
-    code: "GMU",
+    code: "CPIS 360",
+    name: "Emerging Technologies in Information Systems",
+    term: "Current",
+    description: "How new technologies reshape information systems, and how to evaluate them for real use.",
+    level: "King Abdulaziz University",
+  },
+  {
+    code: "CDS 301 / CDS 501",
     name: "Data Visualization",
-    term: "Graduate Lecturer",
+    term: "Fall 2024/Spring 2024",
     description: "Principles and tools for turning scientific data into clear, honest visual stories.",
     level: "George Mason University",
   },
   {
-    code: "GMU",
+    code: "CDS 403",
     name: "Machine Learning for Scientist Applications",
-    term: "Graduate Lecturer",
+    term: "Fall 2025/Spring 2025",
     description: "Core machine learning methods applied to real scientific problems and datasets.",
     level: "George Mason University",
   },
   {
-    code: "GMU",
+    code: "CDS 101",
     name: "R Language Lab",
-    term: "Graduate Lecturer",
+    term: "Spring 2024/Fall 2023",
     description: "Hands-on data analysis and statistical programming in R.",
     level: "George Mason University",
   },
   {
-    code: "GMU",
+    code: "CDS 130",
     name: "Introduction to Scientific Programming",
-    term: "Graduate Lecturer",
-    description: "A first programming course for students outside data science, built around scientific examples.",
+    term: "Fall 2023/spring 2024",
+    description: "Computing course for Science Majors, built around scientific examples.",
     level: "George Mason University",
   },
 ]
