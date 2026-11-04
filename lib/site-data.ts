@@ -100,7 +100,7 @@ export const profileLinks = [
 ]
 
 export const bio = [
-  "I work in computational and data science, with a focus on natural language processing (NLP) and machine learning applied to interdisciplinary questions at the intersection of space sciences, human behavior, and scientific communication. My doctoral research at George Mason University develops NLP as a methodological framework for interdisciplinary science, with the space sciences as its application domain.",
+  "I work in computational and data science, with a focus on natural language processing (NLP) and machine learning applied to interdisciplinary questions at the intersection of space sciences, human behavior, and scientific communication. My doctoral research at George Mason University applied NLP as a methodological framework for interdisciplinary science, with Astrobiology as its application domain.",
   "I have taught data visualization, machine learning for scientific applications, R, and scientific programming, and I enjoy experimenting with adaptive, interactive teaching methods that make technical material more approachable. I am also interested in academic leadership and in co-curricular programs that support students beyond the classroom.",
 ]
 
@@ -136,7 +136,7 @@ export const research = {
 
 export const publications: Publication[] = [
   {
-    authors: ["Berea, A", "Grieg, C", "Sontam, V", "Vera, R","Stine, A", "Kobylarz, B", "Kennedy, W", "Prather, C", "Almaki, A"],
+    authors: ["Berea, A", "Grieg, C", "Sontam, V", "Vera, R","Stine, A", "Kobylarz, B", "Kennedy, W", "Prather, C", "Almalki, A."],
     title: "GIS of the Moon: Current Challenges and Immediate Needs",
     venue: "57th Lunar and Planetary Science Conference",
     year: 2026,
