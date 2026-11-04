@@ -1,7 +1,7 @@
 // Edit everything on the site from this one file.
 // Empty lists ([]) show a short "coming soon" note on the site until you add items.
 
-export type PublicationType = "journal" | "conference" | "preprint"
+export type PublicationType = "journal" | "conference" | "preprint" | "dataset" | "software"
 
 export type Publication = {
   authors: string[]
@@ -101,8 +101,8 @@ export const profileLinks = [
 
 export const bio = [
   "I work in computational and data science, with a focus on natural language processing (NLP) and machine learning applied to interdisciplinary questions at the intersection of space sciences, human behavior, and scientific communication. My doctoral research at George Mason University applied NLP as a methodological framework for interdisciplinary science, with Astrobiology as its application domain.",
-  "I have taught data visualization, machine learning for scientific applications, R, and scientific programming, and I enjoy experimenting with adaptive, interactive teaching methods that make technical material more approachable. I am also interested in academic leadership and in co-curricular programs that support students beyond the classroom.",
-]
+  "I hold a PhD in Computational Sciences and Informatics from George Mason University (2026), an MS in Computer Science from The Catholic University of America (2020), and a BS in Computer Information Systems from King Abdulaziz University (2012).",
+  "I teach and develop courses in data science, data analysis, and data visualization, along with computational thinking and programming for students outside computing. I enjoy designing interactive, hands-on sessions that make technical material approachable, and I am also interested in academic leadership and in co-curricular programs that support students beyond the classroom.",]
 
 export const news: NewsItem[] = []
 
@@ -135,6 +135,70 @@ export const research = {
 }
 
 export const publications: Publication[] = [
+    {
+    authors: ["Al-ansari, B.", "Almalki, A.", "Alshafei, A.", "Alrubayyi, L.", "Albarakati, J.", "Daleh, S.", "Al-Sulami, Z. M.", "Alnemari, M."],
+    title: "Probing the Influence of Internal Stellar Structure on Multi-Wavelength Light Curve Morphologies of Variable Stars",
+    venue: "77th International Astronautical Congress (IAC 2026), Antalya, Türkiye · Poster",
+    year: 2026,
+    type: "conference",
+    href: "#",
+  },
+  {
+    authors: ["Schwarz, A.", "Berea, A.", "Almalki, A."],
+    title: "Public Perceptions and Communications of Searching for Technosignatures and Detection Claims: A Systematic Analysis of YouTube Narratives and Reactions",
+    venue: "IAU Symposium 404: Advancing the Search for Technosignatures · Contributed talk",
+    year: 2026,
+    type: "conference",
+    href: "#",
+  },
+  {
+    authors: ["Almalki, A."],
+    title: "RR Lyrae Cross-Survey: Gaia × TESS and Gaia × OGLE Morphology–Metallicity Analysis",
+    venue: "Zenodo · Code and derived data (v1.0.0)",
+    year: 2026,
+    type: "software",
+    href: "https://doi.org/10.5281/zenodo.21907678",
+  },
+  {
+    authors: ["Almalki, A."],
+    title: "NLP-to-Modeling Pipeline",
+    venue: "Zenodo · Code for the isolated, confined, and extreme (ICE) environments study (v1.0.0)",
+    year: 2026,
+    type: "software",
+    href: "https://doi.org/10.5281/zenodo.20542690",
+  },
+  {
+    authors: ["Almalki, A.", "Berea, A.", "Schwarz, A."],
+    title: "YouTube Comments on Astrobiology Topics: Sentiment and Emotion Analysis Dataset",
+    venue: "Zenodo · 152,501 English-language comments across five astrobiology topics",
+    year: 2026,
+    type: "dataset",
+    href: "https://doi.org/10.5281/zenodo.18738200",
+  },
+  {
+    authors: ["Almalki, A."],
+    title: "YouTube Astrobiology Sentiment and Emotion Analysis",
+    venue: "Zenodo · Code (v1.0)",
+    year: 2026,
+    type: "software",
+    href: "https://doi.org/10.5281/zenodo.18739106",
+  },
+  {
+    authors: ["Almalki, A.", "Berea, A."],
+    title: "ArXiv Astrobiology Preprints (1996–2025): Large-Scale Topic Modeling Analysis",
+    venue: "Zenodo · 52,409 arXiv astrobiology preprints",
+    year: 2026,
+    type: "dataset",
+    href: "https://doi.org/10.5281/zenodo.18750923",
+  },
+  {
+    authors: ["Almalki, A."],
+    title: "ArXiv Astrobiology NLP",
+    venue: "Zenodo · BERTopic and Top2Vec topic-modeling pipeline (v1.00)",
+    year: 2026,
+    type: "software",
+    href: "https://doi.org/10.5281/zenodo.18775420",
+  },
   {
     authors: ["Berea, A", "Grieg, C", "Sontam, V", "Vera, R","Stine, A", "Kobylarz, B", "Kennedy, W", "Prather, C", "Almalki, A."],
     title: "GIS of the Moon: Current Challenges and Immediate Needs",
