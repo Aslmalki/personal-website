@@ -1,17 +1,19 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { type PublicationType, publications, site } from "@/lib/site-data"
 import { SectionHeading } from "@/components/section-heading"
 import { cn } from "@/lib/utils"
 
-const filters: { label: string; value: PublicationType | "all" }[] = [
-  { label: "All", value: "all" },
-  { label: "Journal", value: "journal" },
+const filters: { label: string; value: PublicationType }[] = [
   { label: "Conference", value: "conference" },
-  { label: "Preprint", value: "preprint" },
+  { label: "Journal", value: "journal" },
+  { label: "Datasets", value: "dataset" },
+  { label: "Code", value: "software" },
 ]
+
+const INITIAL_COUNT = 5
 
 function AuthorList({ authors }: { authors: string[] }) {
   return (
@@ -31,16 +33,17 @@ function AuthorList({ authors }: { authors: string[] }) {
 }
 
 export function Publications() {
-  const [filter, setFilter] = useState<PublicationType | "all">("all")
+  const [filter, setFilter] = useState<PublicationType>("conference")
+  const [expanded, setExpanded] = useState(false)
 
-  const grouped = useMemo(() => {
-    const visible = publications.filter((p) => filter === "all" || p.type === filter)
-    const byYear = new Map<number, typeof visible>()
-    for (const pub of visible) {
-      byYear.set(pub.year, [...(byYear.get(pub.year) ?? []), pub])
-    }
-    return [...byYear.entries()].sort((a, b) => b[0] - a[0])
-  }, [filter])
+  const visible = publications.filter((p) => p.type === filter).sort((a, b) => b.year - a.year)
+  const shown = expanded ? visible : visible.slice(0, INITIAL_COUNT)
+
+  const byYear = new Map<number, typeof shown>()
+  for (const pub of shown) {
+    byYear.set(pub.year, [...(byYear.get(pub.year) ?? []), pub])
+  }
+  const grouped = [...byYear.entries()]
 
   return (
     <section id="publications" aria-labelledby="publications-title" className="mx-auto max-w-6xl px-6 py-20">
@@ -49,12 +52,16 @@ export function Publications() {
         <div role="group" aria-label="Filter publications by type" className="flex flex-wrap gap-2">
           {filters.map((f) => {
             const active = filter === f.value
+            const count = publications.filter((p) => p.type === f.value).length
             return (
               <button
                 key={f.value}
                 type="button"
                 aria-pressed={active}
-                onClick={() => setFilter(f.value)}
+                onClick={() => {
+                  setFilter(f.value)
+                  setExpanded(false)
+                }}
                 className={cn(
                   "rounded-md border px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
                   active
@@ -62,7 +69,7 @@ export function Publications() {
                     : "border-border bg-card text-foreground hover:border-primary hover:text-primary",
                 )}
               >
-                {f.label}
+                {f.label} ({count})
               </button>
             )
           })}
@@ -89,17 +96,21 @@ export function Publications() {
                       <span>{pub.title}</span>
                       <ArrowUpRight aria-hidden="true" className="mt-1 size-4 shrink-0 text-muted-foreground group-hover:text-primary" />
                     </a>
-                    <div className="flex flex-wrap items-center gap-3 text-sm">
-                      <span className="italic text-muted-foreground">{pub.venue}</span>
-                      <span className="rounded-sm border border-border bg-muted px-2 py-0.5 text-xs uppercase tracking-wider text-muted-foreground">
-                        {pub.type}
-                      </span>
-                    </div>
+                    <span className="text-sm italic text-muted-foreground">{pub.venue}</span>
                   </li>
                 ))}
               </ol>
             </div>
           ))
+        )}
+        {visible.length > INITIAL_COUNT && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="self-start text-sm text-primary underline-offset-4 hover:underline"
+          >
+            {expanded ? "Show fewer" : `Show all ${visible.length}`}
+          </button>
         )}
       </div>
     </section>
