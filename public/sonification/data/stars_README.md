@@ -1,15 +1,6 @@
 # Educational star table
 
-This folder is the public extract for the fun / educational music page.
-It is not an input or output of the research pipeline (`main.py`, `src/`,
-`data/processed/`). Rebuilding it does not change the science tables.
-
-This folder stays separate from the research pipeline. Two scripts live here:
-
-```bash
-python3 educational_music/build_stars_export.py   # offline Gaia x TESS table
-python3 educational_music/build_lookup.py         # SIMBAD and Gaia archive lookups
-```
+This folder is the public extract for the fun / educational page.
 
 `build_stars_export.py` only reads tables and TESS light curves already on
 disk. It does not query Gaia, TESS, OGLE, SIMBAD, or Bailer-Jones. Re-running
